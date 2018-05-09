@@ -15,6 +15,12 @@
 		7962C90520A289DA000A4191 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7962C90420A289DA000A4191 /* main.m */; };
 		7962C90F20A289DA000A4191 /* MVPDemo01Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7962C90E20A289DA000A4191 /* MVPDemo01Tests.m */; };
 		7962C91A20A289DA000A4191 /* MVPDemo01UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7962C91920A289DA000A4191 /* MVPDemo01UITests.m */; };
+		7962C93120A28BAF000A4191 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7962C92F20A28BAF000A4191 /* DemoViewController.m */; };
+		7962C93220A28BAF000A4191 /* DemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7962C93020A28BAF000A4191 /* DemoViewController.xib */; };
+		7962C93520A28CAB000A4191 /* DemoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7962C93420A28CAB000A4191 /* DemoViewModel.m */; };
+		7962C93820A291F8000A4191 /* DemoTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7962C93720A291F8000A4191 /* DemoTableViewModel.m */; };
+		7962C93B20A29944000A4191 /* DemoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7962C93A20A29944000A4191 /* DemoModel.m */; };
+		7962C93F20A2E55C000A4191 /* DemoViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7962C93E20A2E55C000A4191 /* DemoViewManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,19 @@
 		7962C91520A289DA000A4191 /* MVPDemo01UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVPDemo01UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7962C91920A289DA000A4191 /* MVPDemo01UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVPDemo01UITests.m; sourceTree = "<group>"; };
 		7962C91B20A289DA000A4191 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7962C92820A28A66000A4191 /* ViewManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewManagerProtocol.h; sourceTree = "<group>"; };
+		7962C92920A28A8A000A4191 /* ViewModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewModelProtocol.h; sourceTree = "<group>"; };
+		7962C92E20A28BAF000A4191 /* DemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		7962C92F20A28BAF000A4191 /* DemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		7962C93020A28BAF000A4191 /* DemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoViewController.xib; sourceTree = "<group>"; };
+		7962C93320A28CAB000A4191 /* DemoViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewModel.h; sourceTree = "<group>"; };
+		7962C93420A28CAB000A4191 /* DemoViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewModel.m; sourceTree = "<group>"; };
+		7962C93620A291F8000A4191 /* DemoTableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoTableViewModel.h; sourceTree = "<group>"; };
+		7962C93720A291F8000A4191 /* DemoTableViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTableViewModel.m; sourceTree = "<group>"; };
+		7962C93920A29944000A4191 /* DemoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoModel.h; sourceTree = "<group>"; };
+		7962C93A20A29944000A4191 /* DemoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoModel.m; sourceTree = "<group>"; };
+		7962C93D20A2E55C000A4191 /* DemoViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewManager.h; sourceTree = "<group>"; };
+		7962C93E20A2E55C000A4191 /* DemoViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +120,12 @@
 		7962C8F420A289DA000A4191 /* MVPDemo01 */ = {
 			isa = PBXGroup;
 			children = (
+				7962C93C20A2E53D000A4191 /* ViewManager */,
+				7962C92D20A28B32000A4191 /* ViewModel */,
+				7962C92C20A28B2B000A4191 /* Controller */,
+				7962C92B20A28B24000A4191 /* View */,
+				7962C92A20A28B1C000A4191 /* Model */,
+				7962C92720A28A36000A4191 /* ConfigKit */,
 				7962C8F520A289DA000A4191 /* AppDelegate.h */,
 				7962C8F620A289DA000A4191 /* AppDelegate.m */,
 				7962C8F820A289DA000A4191 /* ViewController.h */,
@@ -130,6 +155,61 @@
 				7962C91B20A289DA000A4191 /* Info.plist */,
 			);
 			path = MVPDemo01UITests;
+			sourceTree = "<group>";
+		};
+		7962C92720A28A36000A4191 /* ConfigKit */ = {
+			isa = PBXGroup;
+			children = (
+				7962C92820A28A66000A4191 /* ViewManagerProtocol.h */,
+				7962C92920A28A8A000A4191 /* ViewModelProtocol.h */,
+			);
+			path = ConfigKit;
+			sourceTree = "<group>";
+		};
+		7962C92A20A28B1C000A4191 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7962C93920A29944000A4191 /* DemoModel.h */,
+				7962C93A20A29944000A4191 /* DemoModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7962C92B20A28B24000A4191 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7962C92C20A28B2B000A4191 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7962C92E20A28BAF000A4191 /* DemoViewController.h */,
+				7962C92F20A28BAF000A4191 /* DemoViewController.m */,
+				7962C93020A28BAF000A4191 /* DemoViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7962C92D20A28B32000A4191 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7962C93320A28CAB000A4191 /* DemoViewModel.h */,
+				7962C93420A28CAB000A4191 /* DemoViewModel.m */,
+				7962C93620A291F8000A4191 /* DemoTableViewModel.h */,
+				7962C93720A291F8000A4191 /* DemoTableViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7962C93C20A2E53D000A4191 /* ViewManager */ = {
+			isa = PBXGroup;
+			children = (
+				7962C93D20A2E55C000A4191 /* DemoViewManager.h */,
+				7962C93E20A2E55C000A4191 /* DemoViewManager.m */,
+			);
+			path = ViewManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +321,7 @@
 				7962C90220A289DA000A4191 /* LaunchScreen.storyboard in Resources */,
 				7962C8FF20A289DA000A4191 /* Assets.xcassets in Resources */,
 				7962C8FD20A289DA000A4191 /* Main.storyboard in Resources */,
+				7962C93220A28BAF000A4191 /* DemoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,9 +346,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7962C93820A291F8000A4191 /* DemoTableViewModel.m in Sources */,
+				7962C93B20A29944000A4191 /* DemoModel.m in Sources */,
 				7962C8FA20A289DA000A4191 /* ViewController.m in Sources */,
 				7962C90520A289DA000A4191 /* main.m in Sources */,
 				7962C8F720A289DA000A4191 /* AppDelegate.m in Sources */,
+				7962C93120A28BAF000A4191 /* DemoViewController.m in Sources */,
+				7962C93520A28CAB000A4191 /* DemoViewModel.m in Sources */,
+				7962C93F20A2E55C000A4191 /* DemoViewManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
