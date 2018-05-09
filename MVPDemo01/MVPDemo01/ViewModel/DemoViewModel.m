@@ -18,7 +18,9 @@
 
 - (void)trans_dataWithModelblock:(void (^)(id))modelBlock
 {
-    
+    if (modelBlock) {
+        modelBlock(@"<<<----result--->>>");
+    }
 }
 
 - (NSArray *)getLocatArray

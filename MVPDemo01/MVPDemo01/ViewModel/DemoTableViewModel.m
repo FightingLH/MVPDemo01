@@ -25,6 +25,7 @@
 {
     table.dataSource = self;
     table.delegate = self;
+    
 }
 
 - (void)getDataWithModel:(NSArray *(^)(void))modelArrayBlock completion:(void (^)(void))completion

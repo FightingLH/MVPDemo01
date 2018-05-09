@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0674FCE420A337FD008440BA /* DemoOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0674FCE320A337FD008440BA /* DemoOneCell.m */; };
+		0674FCE720A33891008440BA /* DemoTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0674FCE620A33891008440BA /* DemoTwoCell.m */; };
+		0674FCEA20A338AA008440BA /* DemoThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0674FCE920A338AA008440BA /* DemoThreeCell.m */; };
 		7962C8F720A289DA000A4191 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7962C8F620A289DA000A4191 /* AppDelegate.m */; };
 		7962C8FA20A289DA000A4191 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7962C8F920A289DA000A4191 /* ViewController.m */; };
 		7962C8FD20A289DA000A4191 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7962C8FB20A289DA000A4191 /* Main.storyboard */; };
@@ -41,6 +44,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0674FCE220A337FD008440BA /* DemoOneCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoOneCell.h; sourceTree = "<group>"; };
+		0674FCE320A337FD008440BA /* DemoOneCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoOneCell.m; sourceTree = "<group>"; };
+		0674FCE520A33891008440BA /* DemoTwoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoTwoCell.h; sourceTree = "<group>"; };
+		0674FCE620A33891008440BA /* DemoTwoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTwoCell.m; sourceTree = "<group>"; };
+		0674FCE820A338AA008440BA /* DemoThreeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoThreeCell.h; sourceTree = "<group>"; };
+		0674FCE920A338AA008440BA /* DemoThreeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoThreeCell.m; sourceTree = "<group>"; };
 		7962C8F220A289DA000A4191 /* MVPDemo01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVPDemo01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7962C8F520A289DA000A4191 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7962C8F620A289DA000A4191 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -97,6 +106,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0674FCE120A337E7008440BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0674FCE220A337FD008440BA /* DemoOneCell.h */,
+				0674FCE320A337FD008440BA /* DemoOneCell.m */,
+				0674FCE520A33891008440BA /* DemoTwoCell.h */,
+				0674FCE620A33891008440BA /* DemoTwoCell.m */,
+				0674FCE820A338AA008440BA /* DemoThreeCell.h */,
+				0674FCE920A338AA008440BA /* DemoThreeCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7962C8E920A289DA000A4191 = {
 			isa = PBXGroup;
 			children = (
@@ -120,10 +142,10 @@
 		7962C8F420A289DA000A4191 /* MVPDemo01 */ = {
 			isa = PBXGroup;
 			children = (
+				0674FCE120A337E7008440BA /* View */,
 				7962C93C20A2E53D000A4191 /* ViewManager */,
 				7962C92D20A28B32000A4191 /* ViewModel */,
 				7962C92C20A28B2B000A4191 /* Controller */,
-				7962C92B20A28B24000A4191 /* View */,
 				7962C92A20A28B1C000A4191 /* Model */,
 				7962C92720A28A36000A4191 /* ConfigKit */,
 				7962C8F520A289DA000A4191 /* AppDelegate.h */,
@@ -173,13 +195,6 @@
 				7962C93A20A29944000A4191 /* DemoModel.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		7962C92B20A28B24000A4191 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		7962C92C20A28B2B000A4191 /* Controller */ = {
@@ -351,9 +366,12 @@
 				7962C8FA20A289DA000A4191 /* ViewController.m in Sources */,
 				7962C90520A289DA000A4191 /* main.m in Sources */,
 				7962C8F720A289DA000A4191 /* AppDelegate.m in Sources */,
+				0674FCE720A33891008440BA /* DemoTwoCell.m in Sources */,
 				7962C93120A28BAF000A4191 /* DemoViewController.m in Sources */,
 				7962C93520A28CAB000A4191 /* DemoViewModel.m in Sources */,
 				7962C93F20A2E55C000A4191 /* DemoViewManager.m in Sources */,
+				0674FCE420A337FD008440BA /* DemoOneCell.m in Sources */,
+				0674FCEA20A338AA008440BA /* DemoThreeCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
