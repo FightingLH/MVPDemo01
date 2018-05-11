@@ -29,6 +29,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.contentView.backgroundColor = [UIColor grayColor];
         [self init_View];
     }
     return self;
@@ -36,7 +37,7 @@
 - (void)init_View
 {
     [self.contentView addSubview:self.clickBtn];
-    self.clickBtn.frame = CGRectMake(10, 10, 50, 13);
+    self.clickBtn.frame = CGRectMake(10, 10, 30, 30);
     
 }
 
@@ -52,8 +53,10 @@
 {
     if (nil == _clickBtn) {
         _clickBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_clickBtn setTitle:@"点击了OneCell" forState:UIControlStateNormal];
-        _clickBtn.backgroundColor = [UIColor grayColor];
+        [_clickBtn setTitle:@"click" forState:UIControlStateNormal];
+        _clickBtn.backgroundColor = [UIColor blueColor];
+        _clickBtn.layer.cornerRadius = 15.0f;
+        _clickBtn.clipsToBounds = YES;
         _clickBtn.titleLabel.font = [UIFont systemFontOfSize:13];
         _clickBtn.titleLabel.textColor = [UIColor redColor];
         [_clickBtn addTarget:self action:@selector(clickOneBtn) forControlEvents:UIControlEventTouchUpInside];

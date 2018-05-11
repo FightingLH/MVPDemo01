@@ -9,12 +9,14 @@
 #import "DemoViewController.h"
 #import "DemoViewModel.h"
 #import "DemoTableViewModel.h"
+#import "DemoViewManager.h"
 
 @interface DemoViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *DemoTableview;
 
 @property (strong,nonatomic) DemoViewModel      *viewModel;
 @property (strong,nonatomic) DemoTableViewModel *tableViewModel;
+@property (strong,nonatomic) DemoViewManager    *viewManager;
 @end
 
 @implementation DemoViewController
@@ -34,7 +36,6 @@
     }
     return _tableViewModel;
 }
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];

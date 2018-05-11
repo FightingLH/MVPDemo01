@@ -7,6 +7,7 @@
 //
 
 #import "DemoViewModel.h"
+#import "DemoModel.h"
 
 @implementation DemoViewModel
 - (void)requestFromService:(successBlock)success failure:(failureBlock)failure
@@ -26,9 +27,43 @@
 - (NSArray *)getLocatArray
 {
     NSMutableArray *localArray = [NSMutableArray new];
-    for (NSInteger i = 0 ; i <= arc4random() % 100; i++) {
-        [localArray addObject:[NSString stringWithFormat:@"%@Test",@(i)]];
+    for (NSInteger i = 0 ; i < 3; i++) {
+        [localArray addObject:[self dealModelWithIdentifer:i] ];
     }
     return localArray.copy;
+}
+
+- (NSArray *)dealModelWithIdentifer:(NSInteger)index
+{
+    NSMutableArray *contentArray = [NSMutableArray new];
+    switch (index) {
+        case 0:
+            {
+                DemoModel *model = [[DemoModel alloc]init];
+                model.identifier = @"DemoOneCell";
+                model.name = @"第一行，第一个";
+                [contentArray addObject:model];
+            }
+            break;
+        case 1:
+            {
+                DemoModel *model = [[DemoModel alloc]init];
+                model.identifier = @"DemoTwoCell";
+                model.name = @"第二行，第一个";
+                [contentArray addObject:model];
+            }
+            break;
+        case 2:
+            {
+                DemoModel *model = [[DemoModel alloc]init];
+                model.identifier = @"DemoThreeCell";
+                model.name = @"第三行，第一个";
+                [contentArray addObject:model];
+            }
+            break;
+        default:
+            break;
+    }
+    return contentArray.copy;
 }
 @end

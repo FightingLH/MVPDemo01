@@ -8,10 +8,13 @@
 
 #import "DemoTableViewModel.h"
 #import "DemoOneCell.h"
+#import "DemoTwoCell.h"
+#import "DemoThreeCell.h"
 #import "DemoViewManager.h"
+#import "DemoModel.h"
+
 @interface DemoTableViewModel()
 @property  (nonatomic, strong)  NSMutableArray  *dataArray;
-@property  (nonatomic, strong)  DemoViewManager *viewManager;
 @end
 
 @implementation DemoTableViewModel
@@ -24,24 +27,35 @@
     return _dataArray;
 }
 
-- (DemoViewManager *)viewManager
-{
-    if (nil == _viewManager) {
-        _viewManager = [DemoViewManager new];
-    }
-    return _viewManager;
-}
 
 - (void)registerCellWithTable:(UITableView *)table
 {
-    [table registerClass:[DemoOneCell class] forCellReuseIdentifier:@"test"];
+    [table registerClass:[DemoOneCell class] forCellReuseIdentifier:NSStringFromClass([DemoOneCell class])];
+    [table registerClass:[DemoTwoCell class] forCellReuseIdentifier:NSStringFromClass([DemoTwoCell class])];
+    [table registerClass:[DemoThreeCell class] forCellReuseIdentifier:NSStringFromClass([DemoThreeCell class])];
+   
 }
 
 - (void)handleWithTable:(UITableView *)table
 {
+    [self registerCellWithTable:table];
     table.dataSource = self;
     table.delegate = self;
-    [self registerCellWithTable:table];
+    
+}
+
+- (UITableViewCell *)spreadToCellWithIndexPath:(NSIndexPath *)indexPath andCell:(UITableViewCell *)cell andModel:(DemoModel *)model
+{
+    if ([cell.reuseIdentifier isEqualToString:NSStringFromClass([DemoOneCell class] )]) {
+        NSLog(@"oneCell---->>%@",model.name);
+    }
+    if ([cell.reuseIdentifier isEqualToString:NSStringFromClass([DemoTwoCell class] )]) {
+        NSLog(@"twoCell---->>%@",model.name);
+    }
+    if ([cell.reuseIdentifier isEqualToString:NSStringFromClass([DemoThreeCell class] )]) {
+        NSLog(@"threeCell---->>%@",model.name);
+    }
+    return cell;
 }
 
 - (void)getDataWithModel:(NSArray *(^)(void))modelArrayBlock completion:(void (^)(void))completion
@@ -57,20 +71,21 @@
 #pragma mark -tableView datasource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DemoOneCell *cell = [tableView dequeueReusableCellWithIdentifier:@"test"];
-    if (nil == cell) {
-        cell = [[DemoOneCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"test"];
-    }
-    return cell;
+
+    DemoModel *model = self.dataArray[indexPath.section][indexPath.row];
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:model.identifier forIndexPath:indexPath];
+    return [self spreadToCellWithIndexPath:indexPath andCell:cell andModel:model];
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return self.dataArray.count;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataArray.count;
+    return [self.dataArray[section] count];
 }
 
 #pragma mark -tableView delegate

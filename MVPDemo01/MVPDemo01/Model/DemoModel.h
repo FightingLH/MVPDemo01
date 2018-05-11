@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface DemoModel : NSObject
-@property  (nonatomic, copy)   NSString *name;
-@property  (nonatomic, copy)   NSString *icon;
-@property  (nonatomic, copy)   NSString *address;
+
+@property  (nonatomic, copy)   NSString   *identifier;
+@property  (nonatomic, copy)   NSString   *name;
+@property  (nonatomic, copy)   NSString   *icon;
+@property  (nonatomic, copy)   NSString   *address;
 @end
