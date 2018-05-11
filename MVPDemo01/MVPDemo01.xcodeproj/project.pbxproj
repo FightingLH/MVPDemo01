@@ -79,6 +79,7 @@
 		7962C93A20A29944000A4191 /* DemoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoModel.m; sourceTree = "<group>"; };
 		7962C93D20A2E55C000A4191 /* DemoViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewManager.h; sourceTree = "<group>"; };
 		7962C93E20A2E55C000A4191 /* DemoViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewManager.m; sourceTree = "<group>"; };
+		797F1FB820A41EDD0094C10F /* ViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +185,7 @@
 			children = (
 				7962C92820A28A66000A4191 /* ViewManagerProtocol.h */,
 				7962C92920A28A8A000A4191 /* ViewModelProtocol.h */,
+				797F1FB820A41EDD0094C10F /* ViewProtocol.h */,
 			);
 			path = ConfigKit;
 			sourceTree = "<group>";

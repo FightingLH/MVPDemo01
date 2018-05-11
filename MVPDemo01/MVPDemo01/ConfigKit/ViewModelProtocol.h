@@ -36,7 +36,7 @@ typedef void (^failureBlock)(NSError *error);
 - (void)trans_dataWithModelblock:(void(^)(id model))modelBlock;
 
 /**
- * viewmodel中的信息传给viewmanager
+ * viewModel中的信息传给viewManager
  */
 - (void)trans_viewModel:(id)viewModel withInfos:(NSDictionary *)infos;
 @end

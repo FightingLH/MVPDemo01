@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewManagerProtocol.h"
 
 @interface DemoThreeCell : UITableViewCell
 

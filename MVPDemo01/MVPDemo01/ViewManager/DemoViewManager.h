@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ViewManagerProtocol.h"
-@interface DemoViewManager : NSObject<ViewManagerProtocol>
+#import "ViewProtocol.h"
+@interface DemoViewManager : NSObject<ViewManagerProtocol,ViewProtocol>
 
 @end

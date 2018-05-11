@@ -9,14 +9,12 @@
 #import "DemoViewController.h"
 #import "DemoViewModel.h"
 #import "DemoTableViewModel.h"
-#import "DemoViewManager.h"
 
 @interface DemoViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *DemoTableview;
 
 @property (strong,nonatomic) DemoViewModel      *viewModel;
 @property (strong,nonatomic) DemoTableViewModel *tableViewModel;
-@property (strong,nonatomic) DemoViewManager    *viewManager;
 @end
 
 @implementation DemoViewController
@@ -37,18 +35,12 @@
     return _tableViewModel;
 }
 
-- (DemoViewManager *)viewManager
-{
-    if (nil == _viewManager) {
-        _viewManager = [[DemoViewManager alloc]init];
-    }
-    return _viewManager;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self.tableViewModel handleWithTable:self.DemoTableview];
+    
     [self.viewModel requestFromService:^(id responseObject) {
         [self reloadWithModelArray:responseObject];
     } failure:^(NSError *error) {

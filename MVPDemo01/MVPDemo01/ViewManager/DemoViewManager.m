@@ -9,5 +9,9 @@
 #import "DemoViewManager.h"
 
 @implementation DemoViewManager
-
+- (void)view:(id)view withEvent:(NSDictionary *)events
+{
+    //处理view的事件
+    NSLog(@"%@--%@",view,events);
+}
 @end

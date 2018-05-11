@@ -7,8 +7,11 @@
 //
 
 #import "DemoTableViewModel.h"
+#import "DemoOneCell.h"
+#import "DemoViewManager.h"
 @interface DemoTableViewModel()
 @property  (nonatomic, strong)  NSMutableArray  *dataArray;
+@property  (nonatomic, strong)  DemoViewManager *viewManager;
 @end
 
 @implementation DemoTableViewModel
@@ -21,11 +24,24 @@
     return _dataArray;
 }
 
+- (DemoViewManager *)viewManager
+{
+    if (nil == _viewManager) {
+        _viewManager = [DemoViewManager new];
+    }
+    return _viewManager;
+}
+
+- (void)registerCellWithTable:(UITableView *)table
+{
+    [table registerClass:[DemoOneCell class] forCellReuseIdentifier:@"test"];
+}
+
 - (void)handleWithTable:(UITableView *)table
 {
     table.dataSource = self;
     table.delegate = self;
-    
+    [self registerCellWithTable:table];
 }
 
 - (void)getDataWithModel:(NSArray *(^)(void))modelArrayBlock completion:(void (^)(void))completion
@@ -41,11 +57,10 @@
 #pragma mark -tableView datasource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"test"];
+    DemoOneCell *cell = [tableView dequeueReusableCellWithIdentifier:@"test"];
     if (nil == cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"test"];
+        cell = [[DemoOneCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"test"];
     }
-    cell.textLabel.text = self.dataArray[indexPath.row];
     return cell;
 }
 
@@ -61,11 +76,11 @@
 #pragma mark -tableView delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    return 60;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+
 }
 @end

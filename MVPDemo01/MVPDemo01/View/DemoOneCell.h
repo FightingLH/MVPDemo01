@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewProtocol.h"
 
 @interface DemoOneCell : UITableViewCell
-
+@property  (weak, nonatomic)  id<ViewProtocol>oneDelegate;
 @end
